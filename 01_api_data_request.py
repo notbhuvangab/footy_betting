@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 13 20:33:10 2020
-
-@author: mhayt
-"""
 
 
 print('\n\n ---------------- START ---------------- \n')
@@ -87,8 +82,8 @@ def req_prem_fixtures_id(season_code, year=YEAR_str):
 
 
 #requesting data on the premier leagues, we will use this response to get the league_id of the season we were interested in
-if request_league_ids:
-    leagues = premier_league_fixtures_raw = get_api_data(base_url, 'leagues/search/premier_league')
+# if request_league_ids:
+    # leagues = premier_league_fixtures_raw = get_api_data(base_url, 'leagues/search/premier_league')
 
 if YEAR == 2019:
     season_id = 524
@@ -102,8 +97,8 @@ else:
     print('please lookup season id and specify this as season_id variable')
 
 #requesting the fixture list using the function req_prem_fixture_id
-if request_fixtures:
-    fixtures = req_prem_fixtures_id(season_id, YEAR_str)
+# if request_fixtures:
+    # fixtures = req_prem_fixtures_id(season_id, YEAR_str)
     
 
 def load_prem_fixtures_id(year=YEAR_str):
@@ -111,14 +106,16 @@ def load_prem_fixtures_id(year=YEAR_str):
     return premier_league_fixtures_df
 
 
-fixtures = load_prem_fixtures_id()
+# fixtures = load_prem_fixtures_id()
 
 
 #------------------------- MAKING CLEAN FIXTURE LIST --------------------------
 
 fixtures = pd.read_json(f'prem_clean_fixtures_and_dataframes/{YEAR_str}_premier_league_fixtures.json', orient='records')
 
+print(fixtures)
 #creating clean past fixture list DataFrame       
+
 
 for i in fixtures.index:
     x1 = str(fixtures['homeTeam'].iloc[i])[12:14]

@@ -1,4 +1,4 @@
-"C:\Users\mhayt\Documents\Software_Developer-Python\Football_Prediction_Project\venv\Scripts\python.exe" "C:\Users\mhayt\Documents\Software_Developer-Python\Football_Prediction_Project\01_api_data_request.py"
+python "\01_api_data_request.py"
 
 "C:\Users\mhayt\Documents\Software_Developer-Python\Football_Prediction_Project\venv\Scripts\python.exe" "C:\Users\mhayt\Documents\Software_Developer-Python\Football_Prediction_Project\02_cleaning_stats_data.py"
 

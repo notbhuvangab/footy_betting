@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Jun 28 11:45:42 2020
-
-@author: mhayt
-"""
 
 
 print('\n\n ---------------- START ---------------- \n')
