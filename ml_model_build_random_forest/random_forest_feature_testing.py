@@ -25,7 +25,7 @@ from ml_functions.ml_model_eval import pred_proba_plot, plot_cross_val_confusion
 from sklearn.ensemble import RandomForestClassifier
 from ml_functions.data_processing import scale_df
 from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.metrics import classification_report, confusion_matrix, plot_confusion_matrix, accuracy_score
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 from sklearn.model_selection import StratifiedKFold, cross_val_score, cross_val_predict
 
 

@@ -17,10 +17,10 @@ app = Flask(__name__, static_url_path='/static')
 #------------------------------------ FLASK -----------------------------------
 
 
-with open('../predictions/pl_predictions.csv', 'rb') as myFile:
+with open('/Users/bhuvan/Downloads/MP/footy_betting/web_server/pl_predictions.csv', 'rb') as myFile:
     pl_pred = pickle.load(myFile)
     
-with open('../prem_clean_fixtures_and_dataframes/2019_2020_2021_2022_additional_stats_dict.txt', 'rb') as myFile:
+with open('/Users/bhuvan/Downloads/MP/footy_betting/prem_clean_fixtures_and_dataframes/2019_2020_2021_2022_additional_stats_dict.txt', 'rb') as myFile:
     additional_stats_dict = pickle.load(myFile)    
 
 
@@ -74,7 +74,7 @@ def pass_game_1():
 
 if __name__ == '__main__':
     #app.debug = True
-    app.run(host = '0.0.0.0', port = 5000)
+    app.run(host = '0.0.0.0', port = 4999)
     
 
 #----- FAVICONS -----

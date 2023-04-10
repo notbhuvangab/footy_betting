@@ -55,8 +55,8 @@ for team in team_id_list:
         #loading df
         df = pd.read_json('prem_game_stats_json_files/' + str(j) + '.json', orient='values')
         #removing percentage symbol in possession and passes and conv to int
-        df['Ball Possession'] = df['Ball Possession'].str.replace('[\%]', '').astype(int)
-        df['Passes %'] = df['Passes %'].str.replace('[\%]', '').astype(int)
+        df['Ball Possession'] = df['Ball Possession'].str.replace('[\%]','', regex= True).astype(int)
+        df['Passes %'] = df['Passes %'].str.replace('[\%]', '', regex= True).astype(int)
         #adding home vs away goals to df
         temp_index = fixtures_clean_ID_index.get_loc(j)
         home_goals = fixtures_clean['Home Team Goals'].iloc[temp_index]
@@ -92,8 +92,8 @@ for team in team_id_list:
         #loading df
         df = pd.read_json('prem_game_stats_json_files/' + str(j) + '.json', orient='values')
         #removing percentage symbol in possession and passes and conv to int
-        df['Ball Possession'] = df['Ball Possession'].str.replace('[\%]', '').astype(int)
-        df['Passes %'] = df['Passes %'].str.replace('[\%]', '').astype(int)
+        df['Ball Possession'] = df['Ball Possession'].str.replace('[\%]', '', regex = True).astype(int)
+        df['Passes %'] = df['Passes %'].str.replace('[\%]', '', regex = True).astype(int)
         #adding home vs away goals to df
         temp_index = fixtures_clean_ID_index.get_loc(j)
         home_goals = fixtures_clean['Home Team Goals'].iloc[temp_index]
