@@ -19,9 +19,9 @@ import pandas as pd
 
 #------------------------------- INPUT VARIABLES ------------------------------
 
-stats_dict_saved_name = '2019_2020_2021_2022_prem_all_stats_dict.txt'
-fixtures_saved_name = '2019_2020_2021_2022_premier_league_fixtures_df.csv'
-results_dict_saved_name = '2019_2020_2021_2022_additional_stats_dict.txt'
+stats_dict_saved_name = '2019_2020_2021_2022_2023_prem_all_stats_dict.txt'
+fixtures_saved_name = '2019_2020_2021_2022_2023_premier_league_fixtures_df.csv'
+results_dict_saved_name = '2019_2020_2021_2022_2023_additional_stats_dict.txt'
 
 
 #------------------------------ ADDITIONAL STATS ------------------------------
@@ -73,18 +73,18 @@ for team in teams:
     fixture_id = list(dic.keys())
     
     if len(dic) == 0:
-        nan_df = results_dict[33]
-        nan_df['Home_Team'] = 'N/A'
-        nan_df['Away_Team'] = 'N/A'
-        nan_df['Home_Team_Score'] = 0
-        nan_df['Away_Team_Score'] = 0
-        nan_df['Fixture_ID'] = 'N/A'
-        #nan_df['Date'] = 'N/A'
-        nan_df['Home_Team_ID'] = 'N/A'
-        nan_df['Away_Team_ID'] = 'N/A'
-        nan_df['Home_Team_Logo'] = 'N/A'
-        nan_df['Away_Team_Logo'] = 'N/A'
-        nan_df['Result'] = 'N/A'
+        nan_df = pd.DataFrame({})
+        nan_df['Home_Team'] = ['N/A'] * 5
+        nan_df['Away_Team'] = ['N/A'] * 5
+        nan_df['Home_Team_Score'] = ['0'] * 5
+        nan_df['Away_Team_Score'] = ['0'] * 5
+        nan_df['Fixture_ID'] = ['N/A'] * 5
+        nan_df['Date'] = ['2000-01-01'] * 5
+        nan_df['Home_Team_ID'] = ['N/A'] * 5
+        nan_df['Away_Team_ID'] = ['N/A'] * 5
+        nan_df['Home_Team_Logo'] = ['N/A'] * 5
+        nan_df['Away_Team_Logo'] = ['N/A'] * 5
+        nan_df['Result'] = ['N/A'] * 5
         results_dict[team] = nan_df
         continue
     

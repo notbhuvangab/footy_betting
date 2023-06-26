@@ -12,15 +12,16 @@ Created on Sat Jun 27 12:11:31 2020
 from flask import Flask, render_template
 import pickle
 from datetime import datetime
+import datetime as dt
 app = Flask(__name__, static_url_path='/static')
 
 #------------------------------------ FLASK -----------------------------------
 
 
-with open('D:/Major Project/footy_betting/predictions/pl_predictions.csv', 'rb') as myFile:
+with open('/Users/bhuvan/Downloads/MP/footy_betting/predictions/pl_predictions.csv', 'rb') as myFile:
     pl_pred = pickle.load(myFile)
     
-with open('D:/Major Project/footy_betting/prem_clean_fixtures_and_dataframes/2019_2020_2021_2022_additional_stats_dict.txt', 'rb') as myFile:
+with open('/Users/bhuvan/Downloads/MP/footy_betting/prem_clean_fixtures_and_dataframes/2019_2020_2021_2022_2023_additional_stats_dict.txt', 'rb') as myFile:
     additional_stats_dict = pickle.load(myFile)    
 
 
@@ -30,7 +31,8 @@ with open('D:/Major Project/footy_betting/prem_clean_fixtures_and_dataframes/201
 #    pl_pred = pickle.load(myFile)
 
 #removing all past predictions if they still exist in the predictions df
-current_date = datetime.today().strftime('%Y-%m-%d')
+curr_date = datetime.today() - dt.timedelta(5)
+current_date = curr_date.strftime('%Y-%m-%d')
 for j in range(len(pl_pred)):
     game_date = pl_pred['Game Date'].loc[j]
     if game_date < current_date:
@@ -71,7 +73,7 @@ def pass_game_1():
 
 if __name__ == '__main__':
     #app.debug = True
-    app.run(host = '0.0.0.0', port = 5000)
+    app.run(host = '0.0.0.0', port = 5555)
     
 
 #----- FAVICONS -----

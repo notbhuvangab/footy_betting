@@ -28,7 +28,7 @@ from os import listdir
 
 #Please state the year of investigation.
 
-YEAR = 2022
+YEAR = 2023
 YEAR_str = str(YEAR)
 
 request_league_ids = False
@@ -101,6 +101,8 @@ elif YEAR == 2021:
     season_id = 3456
 elif YEAR == 2022:
     season_id = 4335
+elif YEAR == 2023:
+    season_id = 5267
 else:
     print('please lookup season id and specify this as season_id variable')
 
